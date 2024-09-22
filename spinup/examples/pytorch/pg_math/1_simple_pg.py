@@ -5,7 +5,7 @@ from torch.optim import Adam
 import numpy as np
 import gymnasium as gym
 from gymnasium.spaces import Discrete, Box
-import copy
+
 '''
 Below is defined the network which is essentially the policy for the agent, it is a neural network which takes into 
 account the observation dimensions.
