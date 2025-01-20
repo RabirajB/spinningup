@@ -15,8 +15,10 @@ class VPGBuffer:
     with the environment, and using Generalized Advantage Estimation (GAE-Lambda)
     for calculating the advantages of state-action pairs.
     """
-
-    def __init__(self, obs_dim, act_dim, size, gamma=0.99, lam=0.95):
+    # gamme: the dicount paramter that is used for advantage estimation
+    # lambda: again the control parameter used in Generalized Advantage Estimation
+    # cite Schulman et.al, 2016.
+    def __init__(self, obs_dim, act_dim, size, gamma=0.99, lam=0.95): 
         self.obs_buf = np.zeros(core.combined_shape(size, obs_dim), dtype=np.float32)
         self.act_buf = np.zeros(core.combined_shape(size, act_dim), dtype=np.float32)
         self.adv_buf = np.zeros(size, dtype=np.float32)
